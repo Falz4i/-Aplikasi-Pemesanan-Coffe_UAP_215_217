@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="PUsh update price non coffe and snack By Naufal_217 + ganti gambar donat">
+    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="PUsh update README.md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UAP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/Caramelmacchiato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/americano.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/arenlatte.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/brown sugar latte.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/cappuccino.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/charcoal latte.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/cheesesticks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/chocolatecake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/donattttt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/donut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/espresso.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/frenchfries.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/greentea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake blackcurrent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake vanilla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gambar/onionrings.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +56,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CekKhodamApp.executor": "Run",
-    "Application.CoffeeOrderingApp.executor": "Run",
-    "Application.HealthManagerApp.executor": "Run",
-    "Application.MusicCollectionApp.executor": "Run",
-    "Application.QuizApp.executor": "Run",
-    "Application.StudentRegistrationApp.executor": "Run",
-    "Application.TicTacToeGUI.executor": "Run",
-    "Application.TicTacToeGame.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/CODING/JAVA MODUL/SEMESTER 3/naspad",
-    "onboarding.tips.debug.path": "D:/JAVA MODUL/SEMESTER 3/UAP/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CekKhodamApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CoffeeOrderingApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HealthManagerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MusicCollectionApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuizApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentRegistrationApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TicTacToeGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TicTacToeGame.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CODING/JAVA MODUL/SEMESTER 3/naspad&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/JAVA MODUL/SEMESTER 3/UAP/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="" />
@@ -130,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734971411563</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="PUsh update README.md file">
+      <option name="closed" value="true" />
+      <created>1734983550179</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734983550179</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,6 +168,20 @@
     <MESSAGE value="PUsh update menu by Naufal_217 and Tegar_215&#10;(refactor class dan exception jika pesanan kosong)" />
     <MESSAGE value="PUsh update price coffe By Tegar_215" />
     <MESSAGE value="PUsh update price non coffe and snack By Naufal_217 + ganti gambar donat" />
-    <option name="LAST_COMMIT_MESSAGE" value="PUsh update price non coffe and snack By Naufal_217 + ganti gambar donat" />
+    <MESSAGE value="PUsh update README.md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="PUsh update README.md file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

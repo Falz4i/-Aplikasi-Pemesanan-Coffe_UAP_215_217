@@ -93,24 +93,24 @@ public class CoffeeOrderingApp {
 
         // Example items for different categories
         if (category.equals("Coffee")) {
-            coffeeMenu.add(new Coffee("Espresso", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\espresso.jpg")));
-            coffeeMenu.add(new Coffee("Americano", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\americano.jpg")));
-            coffeeMenu.add(new Coffee("Cappuccino", "24,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\cappuccino.jpg")));
-            coffeeMenu.add(new Coffee("Caramel Macchiato", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\Caramelmacchiato.jpg")));
-            coffeeMenu.add(new Coffee("Charcoal Latte", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\charcoal latte.jpg")));
-            coffeeMenu.add(new Coffee("Brown Sugar Latte", "20,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\brown sugar latte.jpg")));
+            coffeeMenu.add(new Coffee("Espresso", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\espresso.jpg")));
+            coffeeMenu.add(new Coffee("Americano", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\americano.jpg")));
+            coffeeMenu.add(new Coffee("Cappuccino", "24,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\cappuccino.jpg")));
+            coffeeMenu.add(new Coffee("Caramel Macchiato", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\Caramelmacchiato.jpg")));
+            coffeeMenu.add(new Coffee("Charcoal Latte", "25,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\charcoal latte.jpg")));
+            coffeeMenu.add(new Coffee("Brown Sugar Latte", "20,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\brown sugar latte.jpg")));
 
         } else if (category.equals("Non-Coffee")) {
-            coffeeMenu.add(new Coffee("Green Tea Latte", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\greentea.jpg")));
-            coffeeMenu.add(new Coffee("Milkshake Strawberry", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\milkshake.jpg")));
-            coffeeMenu.add(new Coffee("Milkshake Vanilla", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\milkshake vanilla.jpg")));
-            coffeeMenu.add(new Coffee("Milkshake Blackcurrant", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\milkshake blackcurrent.jpg")));
+            coffeeMenu.add(new Coffee("Green Tea Latte", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\greentea.jpg")));
+            coffeeMenu.add(new Coffee("Milkshake Strawberry", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\milkshake.jpg")));
+            coffeeMenu.add(new Coffee("Milkshake Vanilla", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\milkshake vanilla.jpg")));
+            coffeeMenu.add(new Coffee("Milkshake Blackcurrant", "19,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\milkshake blackcurrent.jpg")));
         } else if (category.equals("Snacks")) {
-            coffeeMenu.add(new Coffee("French Fries", "17,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\frenchfries.jpg")));
-            coffeeMenu.add(new Coffee("Cheese Sticks", "23,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\cheesesticks.jpg")));
-            coffeeMenu.add(new Coffee("Onion Rings", "17,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\onionrings.jpg")));
-            coffeeMenu.add(new Coffee("Chocolate Cake", "20,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\chocolatecake.jpg")));
-            coffeeMenu.add(new Coffee("Donuts", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\src\\Gambar\\donattttt.jpg")));
+            coffeeMenu.add(new Coffee("French Fries", "17,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\frenchfries.jpg")));
+            coffeeMenu.add(new Coffee("Cheese Sticks", "23,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\cheesesticks.jpg")));
+            coffeeMenu.add(new Coffee("Onion Rings", "17,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\onionrings.jpg")));
+            coffeeMenu.add(new Coffee("Chocolate Cake", "20,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\chocolatecake.jpg")));
+            coffeeMenu.add(new Coffee("Donuts", "18,000", new ImageIcon("D:\\JAVA MODUL\\SEMESTER 3\\UAP\\assets\\donattttt.jpg")));
         }
 
         for (Coffee coffee : coffeeMenu) {
