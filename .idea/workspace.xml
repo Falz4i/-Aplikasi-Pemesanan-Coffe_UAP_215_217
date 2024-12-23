@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src">
+    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="update readme file selain fitur juga memberikan testing dan code review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734985062468</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update readme file selain fitur juga memberikan testing dan code review">
+      <option name="closed" value="true" />
+      <created>1734986545301</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734986545301</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -160,7 +168,8 @@
     <MESSAGE value="PUsh update price non coffe and snack By Naufal_217 + ganti gambar donat" />
     <MESSAGE value="PUsh update README.md file" />
     <MESSAGE value="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src" />
-    <option name="LAST_COMMIT_MESSAGE" value="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src" />
+    <MESSAGE value="update readme file selain fitur juga memberikan testing dan code review" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme file selain fitur juga memberikan testing dan code review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

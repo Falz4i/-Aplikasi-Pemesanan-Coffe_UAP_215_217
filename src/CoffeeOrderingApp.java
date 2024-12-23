@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Aplikasi pemesanan kopi berbasis Java Swing yang memungkinkan pengguna untuk memilih menu,
+ * mengelola pesanan, dan menyelesaikan pembayaran.
+ */
 public class CoffeeOrderingApp {
 
     private JFrame frame;
@@ -13,6 +17,9 @@ public class CoffeeOrderingApp {
     private double totalPrice = 0.0;
     private String orderType = ""; // "Dine In" or "Take Away"
 
+    /**
+     * Konstruktor utama untuk memulai aplikasi dan mengatur antarmuka pengguna grafis.
+     */
     public CoffeeOrderingApp() {
         frame = new JFrame("Coffee Ordering App");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,6 +94,11 @@ public class CoffeeOrderingApp {
         frame.setVisible(true);
     }
 
+    /**
+     * Memuat kategori menu berdasarkan nama kategori yang diberikan.
+     *
+     * @param category nama kategori (contoh: "Coffee", "Non-Coffee", atau "Snacks")
+     */
     private void loadCategory(String category) {
         menuPanel.removeAll();
         coffeeMenu = new ArrayList<>();
@@ -151,6 +163,11 @@ public class CoffeeOrderingApp {
         menuPanel.repaint();
     }
 
+    /**
+     * Menambahkan item ke daftar pesanan.
+     *
+     * @param coffee objek {@link Coffee} yang akan ditambahkan ke daftar pesanan
+     */
     private void addToOrder(Coffee coffee) {
         String itemName = coffee.name;
         String itemPrice = coffee.price;
@@ -160,6 +177,11 @@ public class CoffeeOrderingApp {
         totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
     }
 
+    /**
+     * Menghapus item yang dipilih dari daftar pesanan.
+     *
+     * @param orderList daftar pesanan pengguna dalam format {@link JList}
+     */
     private void removeItem(JList<String> orderList) {
         int selectedIndex = orderList.getSelectedIndex();
         if (selectedIndex != -1) {
@@ -182,30 +204,27 @@ public class CoffeeOrderingApp {
         }
     }
 
+    /**
+     * Menghapus semua item dari daftar pesanan.
+     */
     private void clearAllOrders() {
         orderListModel.clear();
         totalPrice = 0.0;
         totalLabel.setText("Total: Rp0");
     }
 
+    /**
+     * Menampilkan dialog untuk memilih jenis pesanan (Dine In atau Take Away).
+     */
     private void chooseOrderType() {
-        // Cek apakah ada item di daftar pesanan
         if (orderListModel.isEmpty()) {
-            // Tampilkan pesan error jika tidak ada item di daftar pesanan
             JOptionPane.showMessageDialog(frame, "Pesanan Anda kosong! Silakan tambahkan item ke dalam pesanan terlebih dahulu.", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Hentikan proses jika tidak ada pesanan
+            return;
         }
 
-        // Jika ada pesanan, lanjutkan ke dialog jenis pesanan
         String[] options = {"Dine In", "Take Away"};
-        int choice = JOptionPane.showOptionDialog(frame,
-                "Choose your order type:",
-                "Order Type",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,
-                null,
-                options,
-                options[0]);
+        int choice = JOptionPane.showOptionDialog(frame, "Choose your order type:", "Order Type",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
         if (choice == 0) {
             orderType = "Dine In";
@@ -218,41 +237,32 @@ public class CoffeeOrderingApp {
         }
     }
 
+    /**
+     * Menampilkan dialog untuk memilih metode pembayaran dan menyelesaikan pembayaran.
+     */
     private void choosePaymentMethod() {
-        // Cek apakah pesanan kosong sebelum memilih metode pembayaran
         if (orderListModel.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "Pesanan Anda kosong! Silakan tambahkan item ke dalam pesanan terlebih dahulu.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         String[] paymentMethods = {"Cash", "Credit Card", "E-Wallet"};
-        String paymentMethod = (String) JOptionPane.showInputDialog(
-                frame,
-                "Select Payment Method:\nOrder Type: " + orderType,
-                "Payment",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                paymentMethods,
-                paymentMethods[0]);
+        String paymentMethod = (String) JOptionPane.showInputDialog(frame, "Select Payment Method:\nOrder Type: " + orderType,
+                "Payment", JOptionPane.PLAIN_MESSAGE, null, paymentMethods, paymentMethods[0]);
 
         if (paymentMethod != null) {
             double tax = totalPrice * 0.12;
             double finalTotal = totalPrice + tax;
 
-            // Build order details (like a receipt)
             StringBuilder orderDetails = new StringBuilder();
             for (int i = 0; i < orderListModel.size(); i++) {
                 orderDetails.append(orderListModel.getElementAt(i)).append("\n");
             }
 
-            // Show payment dialog with detailed receipt
-            JOptionPane.showMessageDialog(frame,
-                    "Order Type: " + orderType + "\n" +
-                            "Payment Method: " + paymentMethod + "\n\n" +
-                            "Order Details:\n" + orderDetails.toString() + "\n" +
-                            "Subtotal: Rp" + formatPrice(totalPrice) + "\n" +
-                            "Tax (12%): Rp" + formatPrice(tax) + "\n" +
-                            "Total: Rp" + formatPrice(finalTotal));
+            JOptionPane.showMessageDialog(frame, "Order Type: " + orderType + "\n" +
+                    "Payment Method: " + paymentMethod + "\n\nOrder Details:\n" + orderDetails.toString() +
+                    "Subtotal: Rp" + formatPrice(totalPrice) + "\nTax (12%): Rp" + formatPrice(tax) +
+                    "\nTotal: Rp" + formatPrice(finalTotal));
 
             orderListModel.clear();
             totalPrice = 0.0;
@@ -260,11 +270,21 @@ public class CoffeeOrderingApp {
         }
     }
 
-
+    /**
+     * Memformat harga menjadi string yang sesuai dengan format Rupiah.
+     *
+     * @param price nilai harga dalam bentuk double
+     * @return string harga yang terformat
+     */
     private String formatPrice(double price) {
         return String.format("%,.0f", price).replace(',', '.');
     }
 
+    /**
+     * Metode utama untuk menjalankan aplikasi pemesanan kopi.
+     *
+     * @param args argumen baris perintah
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(CoffeeOrderingApp::new);
     }
