@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="PUsh update README.md file">
+    <list default="true" id="c64d16e9-9133-43da-97dc-731c91158319" name="Changes" comment="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeOrderingApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/Caramelmacchiato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/americano.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/arenlatte.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/brown sugar latte.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/cappuccino.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/charcoal latte.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/cheesesticks.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/chocolatecake.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/donattttt.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/donut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/espresso.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/frenchfries.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/greentea.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake blackcurrent.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake vanilla.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/milkshake.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gambar/onionrings.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734983550179</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src">
+      <option name="closed" value="true" />
+      <created>1734985062468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734985062468</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,7 +159,8 @@
     <MESSAGE value="PUsh update price coffe By Tegar_215" />
     <MESSAGE value="PUsh update price non coffe and snack By Naufal_217 + ganti gambar donat" />
     <MESSAGE value="PUsh update README.md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="PUsh update README.md file" />
+    <MESSAGE value="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src" />
+    <option name="LAST_COMMIT_MESSAGE" value="PUsh update gambar dipindahkan ke folder assets agar tidak tercampur dengan class pada folder src" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
