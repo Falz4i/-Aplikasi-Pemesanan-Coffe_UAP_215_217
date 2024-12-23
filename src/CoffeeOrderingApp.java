@@ -4,18 +4,6 @@ import java.util.ArrayList;
 
 public class CoffeeOrderingApp {
 
-    static class Coffee {
-        String name;
-        String price;
-        ImageIcon image;
-
-        public Coffee(String name, String price, ImageIcon image) {
-            this.name = name;
-            this.price = price;
-            this.image = image;
-        }
-    }
-
     private JFrame frame;
     private JPanel menuPanel;
     private JPanel orderPanel;
@@ -201,6 +189,14 @@ public class CoffeeOrderingApp {
     }
 
     private void chooseOrderType() {
+        // Cek apakah ada item di daftar pesanan
+        if (orderListModel.isEmpty()) {
+            // Tampilkan pesan error jika tidak ada item di daftar pesanan
+            JOptionPane.showMessageDialog(frame, "Pesanan Anda kosong! Silakan tambahkan item ke dalam pesanan terlebih dahulu.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Hentikan proses jika tidak ada pesanan
+        }
+
+        // Jika ada pesanan, lanjutkan ke dialog jenis pesanan
         String[] options = {"Dine In", "Take Away"};
         int choice = JOptionPane.showOptionDialog(frame,
                 "Choose your order type:",
@@ -223,6 +219,12 @@ public class CoffeeOrderingApp {
     }
 
     private void choosePaymentMethod() {
+        // Cek apakah pesanan kosong sebelum memilih metode pembayaran
+        if (orderListModel.isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "Pesanan Anda kosong! Silakan tambahkan item ke dalam pesanan terlebih dahulu.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String[] paymentMethods = {"Cash", "Credit Card", "E-Wallet"};
         String paymentMethod = (String) JOptionPane.showInputDialog(
                 frame,
@@ -257,6 +259,7 @@ public class CoffeeOrderingApp {
             totalLabel.setText("Total: Rp0");
         }
     }
+
 
     private String formatPrice(double price) {
         return String.format("%,.0f", price).replace(',', '.');
