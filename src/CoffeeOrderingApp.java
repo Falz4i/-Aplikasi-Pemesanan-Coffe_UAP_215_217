@@ -33,7 +33,7 @@ public class CoffeeOrderingApp {
 
         // Category Panel
         JPanel categoryPanel = new JPanel();
-        categoryPanel.setLayout(new GridLayout(1, 4));
+        categoryPanel.setLayout(new GridLayout(1, 3));
 
         JButton coffeeButton = new JButton("Coffee");
         coffeeButton.addActionListener(e -> loadCategory("Coffee"));
@@ -44,13 +44,9 @@ public class CoffeeOrderingApp {
         JButton snacksButton = new JButton("Snacks");
         snacksButton.addActionListener(e -> loadCategory("Snacks"));
 
-        JButton promoButton = new JButton("Promo");
-        promoButton.addActionListener(e -> loadCategory("Promo"));
-
         categoryPanel.add(coffeeButton);
         categoryPanel.add(nonCoffeeButton);
         categoryPanel.add(snacksButton);
-        categoryPanel.add(promoButton);
 
         frame.add(categoryPanel, BorderLayout.NORTH);
 
@@ -74,6 +70,9 @@ public class CoffeeOrderingApp {
         JButton removeButton = new JButton("Remove Item");
         removeButton.addActionListener(e -> removeItem(orderList));
 
+        JButton clearButton = new JButton("Clear All");
+        clearButton.addActionListener(e -> clearAllOrders());
+
         JButton checkoutButton = new JButton("Checkout");
         checkoutButton.setBackground(new Color(46, 204, 113)); // Green
         checkoutButton.setForeground(Color.WHITE);
@@ -83,6 +82,7 @@ public class CoffeeOrderingApp {
         JPanel orderActionsPanel = new JPanel();
         orderActionsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         orderActionsPanel.add(removeButton);
+        orderActionsPanel.add(clearButton);
         orderActionsPanel.add(checkoutButton);
 
         orderPanel.add(orderScrollPane, BorderLayout.CENTER);
@@ -105,12 +105,18 @@ public class CoffeeOrderingApp {
 
         // Example items for different categories
         if (category.equals("Coffee")) {
-            coffeeMenu.add(new Coffee("Espresso", "30,000", new ImageIcon("path/to/espresso.jpg")));
-            coffeeMenu.add(new Coffee("Americano", "33,000", new ImageIcon("path/to/americano.jpg")));
-            coffeeMenu.add(new Coffee("Cappuccino", "35,000", new ImageIcon("path/to/cappuccino.jpg")));
+            coffeeMenu.add(new Coffee("Espresso", "30,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\americano.jpg")));
+            coffeeMenu.add(new Coffee("Americano", "33,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\espresso.jpg")));
+            coffeeMenu.add(new Coffee("Cappuccino", "35,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\cappuccino.jpg")));
         } else if (category.equals("Non-Coffee")) {
-            coffeeMenu.add(new Coffee("Green Tea Latte", "40,000", new ImageIcon("path/to/greentea.jpg")));
-            coffeeMenu.add(new Coffee("Milkshake Vanilla", "50,000", new ImageIcon("path/to/milkshake.jpg")));
+            coffeeMenu.add(new Coffee("Green Tea Latte", "40,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\greentea.jpg")));
+            coffeeMenu.add(new Coffee("Milkshake Vanilla", "50,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\milkshake.jpg")));
+        } else if (category.equals("Snacks")) {
+            coffeeMenu.add(new Coffee("French Fries", "25,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\frenchfries.jpg")));
+            coffeeMenu.add(new Coffee("Cheese Sticks", "30,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\cheesesticks.jpg")));
+            coffeeMenu.add(new Coffee("Onion Rings", "28,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\onionrings.jpg")));
+            coffeeMenu.add(new Coffee("Chocolate Cake", "35,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\chocolatecake.jpg")));
+            coffeeMenu.add(new Coffee("Donut", "20,000", new ImageIcon("C:\\Users\\iGarrr\\IdeaProjects\\ttry\\src\\Gambar\\donut.jpg")));
         }
 
         for (Coffee coffee : coffeeMenu) {
@@ -163,23 +169,29 @@ public class CoffeeOrderingApp {
     private void removeItem(JList<String> orderList) {
         int selectedIndex = orderList.getSelectedIndex();
         if (selectedIndex != -1) {
-            // Dapatkan detail item yang dipilih
+            // Get selected item details
             String selectedItem = orderListModel.get(selectedIndex);
             String[] parts = selectedItem.split(" - Rp");
-            String priceString = parts[1].replace(",", ""); // Ambil harga
+            String priceString = parts[1].replace(",", ""); // Get price
             double price = Double.parseDouble(priceString);
 
-            // Kurangi harga item dari total
+            // Subtract item price from total
             totalPrice -= price;
 
-            // Hapus item dari daftar pesanan
+            // Remove item from order list
             orderListModel.remove(selectedIndex);
 
-            // Perbarui label total
+            // Update total label
             totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
         } else {
             JOptionPane.showMessageDialog(frame, "Please select an item to remove.");
         }
+    }
+
+    private void clearAllOrders() {
+        orderListModel.clear();
+        totalPrice = 0.0;
+        totalLabel.setText("Total: Rp0");
     }
 
     private void chooseOrderType() {
