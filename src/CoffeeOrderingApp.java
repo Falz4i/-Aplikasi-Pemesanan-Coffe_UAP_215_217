@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class CoffeeOrderingApp {
 
-    // Class to store coffee details
     static class Coffee {
         String name;
         String price;
@@ -24,6 +23,7 @@ public class CoffeeOrderingApp {
     private JLabel totalLabel;
     private ArrayList<Coffee> coffeeMenu;
     private double totalPrice = 0.0;
+    private String orderType = ""; // "Dine In" or "Take Away"
 
     public CoffeeOrderingApp() {
         frame = new JFrame("Coffee Ordering App");
@@ -56,29 +56,32 @@ public class CoffeeOrderingApp {
 
         // Menu Panel
         menuPanel = new JPanel();
-        menuPanel.setLayout(new GridLayout(5, 2, 10, 10)); // 5 rows, 2 columns
+        menuPanel.setLayout(new GridLayout(3, 3, 10, 10));
+        menuPanel.setBackground(Color.WHITE);
 
         // Order Panel
         orderPanel = new JPanel();
         orderPanel.setLayout(new BorderLayout());
+        orderPanel.setBackground(Color.WHITE);
 
         orderListModel = new DefaultListModel<>();
         JList<String> orderList = new JList<>(orderListModel);
         JScrollPane orderScrollPane = new JScrollPane(orderList);
 
         totalLabel = new JLabel("Total: Rp0", JLabel.RIGHT);
-
-        JButton editButton = new JButton("Edit Quantity");
-        editButton.addActionListener(e -> editQuantity(orderList));
+        totalLabel.setFont(new Font("Arial", Font.BOLD, 14));
 
         JButton removeButton = new JButton("Remove Item");
         removeButton.addActionListener(e -> removeItem(orderList));
 
         JButton checkoutButton = new JButton("Checkout");
-        checkoutButton.addActionListener(e -> checkout());
+        checkoutButton.setBackground(new Color(46, 204, 113)); // Green
+        checkoutButton.setForeground(Color.WHITE);
+        checkoutButton.setFocusPainted(false);
+        checkoutButton.addActionListener(e -> chooseOrderType()); // Choose "Dine In" or "Take Away"
 
         JPanel orderActionsPanel = new JPanel();
-        orderActionsPanel.add(editButton);
+        orderActionsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         orderActionsPanel.add(removeButton);
         orderActionsPanel.add(checkoutButton);
 
@@ -100,40 +103,42 @@ public class CoffeeOrderingApp {
         menuPanel.removeAll();
         coffeeMenu = new ArrayList<>();
 
-        // Example items for different categories (these can be replaced with API data)
+        // Example items for different categories
         if (category.equals("Coffee")) {
-            coffeeMenu.add(new Coffee("FOURever KOPI SUSU AREN", "79,000", new ImageIcon("path/to/image1.jpg")));
-            coffeeMenu.add(new Coffee("FOURever TOMORO Aren Latte", "87,000", new ImageIcon("path/to/image2.jpg")));
-            coffeeMenu.add(new Coffee("Espresso", "30,000", new ImageIcon("path/to/image3.jpg")));
-            coffeeMenu.add(new Coffee("Cappuccino", "40,000", new ImageIcon("path/to/image4.jpg")));
-            coffeeMenu.add(new Coffee("Latte", "35,000", new ImageIcon("path/to/image5.jpg")));
-            coffeeMenu.add(new Coffee("Americano", "25,000", new ImageIcon("path/to/image6.jpg")));
-            coffeeMenu.add(new Coffee("Mocha", "45,000", new ImageIcon("path/to/image7.jpg")));
-            coffeeMenu.add(new Coffee("Macchiato", "50,000", new ImageIcon("path/to/image8.jpg")));
-            coffeeMenu.add(new Coffee("Flat White", "55,000", new ImageIcon("path/to/image9.jpg")));
-            coffeeMenu.add(new Coffee("Affogato", "60,000", new ImageIcon("path/to/image10.jpg")));
+            coffeeMenu.add(new Coffee("Espresso", "30,000", new ImageIcon("path/to/espresso.jpg")));
+            coffeeMenu.add(new Coffee("Americano", "33,000", new ImageIcon("path/to/americano.jpg")));
+            coffeeMenu.add(new Coffee("Cappuccino", "35,000", new ImageIcon("path/to/cappuccino.jpg")));
         } else if (category.equals("Non-Coffee")) {
-            coffeeMenu.add(new Coffee("Green Tea Latte", "65,000", new ImageIcon("path/to/image11.jpg")));
-            coffeeMenu.add(new Coffee("Milkshake Vanilla", "60,000", new ImageIcon("path/to/image12.jpg")));
-        } else if (category.equals("Snacks")) {
-            coffeeMenu.add(new Coffee("Cheese Croissant", "45,000", new ImageIcon("path/to/image13.jpg")));
-            coffeeMenu.add(new Coffee("Chocolate Muffin", "35,000", new ImageIcon("path/to/image14.jpg")));
-        } else if (category.equals("Promo")) {
-            coffeeMenu.add(new Coffee("Duo Spanish Latte", "54,000", new ImageIcon("path/to/image15.jpg")));
-            coffeeMenu.add(new Coffee("Special Combo", "105,000", new ImageIcon("path/to/image16.jpg")));
+            coffeeMenu.add(new Coffee("Green Tea Latte", "40,000", new ImageIcon("path/to/greentea.jpg")));
+            coffeeMenu.add(new Coffee("Milkshake Vanilla", "50,000", new ImageIcon("path/to/milkshake.jpg")));
         }
 
         for (Coffee coffee : coffeeMenu) {
             JPanel coffeePanel = new JPanel();
             coffeePanel.setLayout(new BorderLayout());
+            coffeePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            coffeePanel.setBackground(Color.LIGHT_GRAY);
 
-            JLabel imageLabel = new JLabel(coffee.image);
+            // Set image
+            Image image = coffee.image.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+            JLabel imageLabel = new JLabel(new ImageIcon(image));
+
+            // Name and price
             JLabel nameLabel = new JLabel(coffee.name, JLabel.CENTER);
-            JLabel priceLabel = new JLabel("Rp" + coffee.price, JLabel.CENTER);
+            nameLabel.setFont(new Font("Arial", Font.BOLD, 14));
 
-            JButton addButton = new JButton("Add to Order");
+            JLabel priceLabel = new JLabel("Rp" + coffee.price, JLabel.CENTER);
+            priceLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+            priceLabel.setForeground(Color.GRAY);
+
+            // Add button
+            JButton addButton = new JButton("Pesan");
+            addButton.setBackground(new Color(255, 165, 0)); // Orange
+            addButton.setForeground(Color.WHITE);
+            addButton.setFocusPainted(false);
             addButton.addActionListener(e -> addToOrder(coffee));
 
+            // Add to panel
             coffeePanel.add(imageLabel, BorderLayout.CENTER);
             coffeePanel.add(nameLabel, BorderLayout.NORTH);
             coffeePanel.add(priceLabel, BorderLayout.SOUTH);
@@ -150,103 +155,85 @@ public class CoffeeOrderingApp {
         String itemName = coffee.name;
         String itemPrice = coffee.price;
 
-        // Check if the item is already in the order list
-        boolean itemExists = false;
-        for (int i = 0; i < orderListModel.size(); i++) {
-            String orderItem = orderListModel.get(i);
-            if (orderItem.startsWith(itemName)) {
-                // Item exists, update the quantity
-                String[] parts = orderItem.split(" x");
-                int currentQuantity = Integer.parseInt(parts[1].split(" - Rp")[0]);
-                currentQuantity++;
-                double price = Double.parseDouble(parts[1].split(" - Rp")[1].replace(",", ""));
-                totalPrice -= price; // Remove the old price
-                totalPrice += Double.parseDouble(itemPrice.replace(",", "")); // Add the new price
-                orderListModel.set(i, itemName + " x" + currentQuantity + " - Rp" + formatPrice(currentQuantity * Double.parseDouble(itemPrice.replace(",", ""))));
-                itemExists = true;
-                break;
-            }
-        }
-
-        // If the item does not exist, add it to the order
-        if (!itemExists) {
-            orderListModel.addElement(itemName + " x1 - Rp" + itemPrice);
-            totalPrice += Double.parseDouble(itemPrice.replace(",", ""));
-        }
-
+        orderListModel.addElement(itemName + " - Rp" + itemPrice);
+        totalPrice += Double.parseDouble(itemPrice.replace(",", ""));
         totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
-    }
-
-    private void editQuantity(JList<String> orderList) {
-        int selectedIndex = orderList.getSelectedIndex();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(frame, "Please select an item to edit quantity.");
-            return;
-        }
-
-        String selectedItem = orderListModel.get(selectedIndex);
-        String[] parts = selectedItem.split(" x");
-        String name = parts[0];
-        double price = Double.parseDouble(parts[1].split(" - Rp")[1].replace(",", ""));
-
-        String quantityStr = JOptionPane.showInputDialog(frame, "Enter new quantity for " + name + ":", "1");
-        if (quantityStr == null || quantityStr.isEmpty()) {
-            return;
-        }
-
-        try {
-            int newQuantity = Integer.parseInt(quantityStr);
-            if (newQuantity <= 0) {
-                JOptionPane.showMessageDialog(frame, "Quantity must be greater than 0.");
-                return;
-            }
-
-            totalPrice -= price; // Remove the old price
-            totalPrice += price / (Integer.parseInt(parts[1].split(" - Rp")[0])) * newQuantity; // Update total price
-            orderListModel.set(selectedIndex, name + " x" + newQuantity + " - Rp" + formatPrice(price / (Integer.parseInt(parts[1].split(" - Rp")[0])) * newQuantity));
-            totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(frame, "Invalid quantity entered.");
-        }
     }
 
     private void removeItem(JList<String> orderList) {
         int selectedIndex = orderList.getSelectedIndex();
-        if (selectedIndex == -1) {
+        if (selectedIndex != -1) {
+            // Dapatkan detail item yang dipilih
+            String selectedItem = orderListModel.get(selectedIndex);
+            String[] parts = selectedItem.split(" - Rp");
+            String priceString = parts[1].replace(",", ""); // Ambil harga
+            double price = Double.parseDouble(priceString);
+
+            // Kurangi harga item dari total
+            totalPrice -= price;
+
+            // Hapus item dari daftar pesanan
+            orderListModel.remove(selectedIndex);
+
+            // Perbarui label total
+            totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
+        } else {
             JOptionPane.showMessageDialog(frame, "Please select an item to remove.");
-            return;
         }
-
-        // Get the selected item's details
-        String selectedItem = orderListModel.get(selectedIndex);
-        String[] parts = selectedItem.split(" x");
-        String name = parts[0];
-        String[] priceParts = parts[1].split(" - Rp");
-        int quantity = Integer.parseInt(priceParts[0].trim());
-        double pricePerUnit = Double.parseDouble(priceParts[1].replace(",", ""));
-        double totalItemPrice = quantity * pricePerUnit;
-
-        // Update the total price
-        totalPrice -= totalItemPrice;
-
-        // Remove the item from the order list
-        orderListModel.remove(selectedIndex);
-
-        // Refresh the total price label
-        totalLabel.setText("Total: Rp" + formatPrice(totalPrice));
-        totalLabel.repaint(); // Ensure the label is visually refreshed
     }
 
+    private void chooseOrderType() {
+        String[] options = {"Dine In", "Take Away"};
+        int choice = JOptionPane.showOptionDialog(frame,
+                "Choose your order type:",
+                "Order Type",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                options,
+                options[0]);
 
+        if (choice == 0) {
+            orderType = "Dine In";
+        } else if (choice == 1) {
+            orderType = "Take Away";
+        }
 
-    private void checkout() {
-        double tax = totalPrice * 0.12;
-        double finalTotal = totalPrice + tax;
+        if (!orderType.isEmpty()) {
+            choosePaymentMethod();
+        }
+    }
+
+    private void choosePaymentMethod() {
         String[] paymentMethods = {"Cash", "Credit Card", "E-Wallet"};
-        String paymentMethod = (String) JOptionPane.showInputDialog(frame, "Select Payment Method:", "Payment", JOptionPane.PLAIN_MESSAGE, null, paymentMethods, paymentMethods[0]);
+        String paymentMethod = (String) JOptionPane.showInputDialog(
+                frame,
+                "Select Payment Method:\nOrder Type: " + orderType,
+                "Payment",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                paymentMethods,
+                paymentMethods[0]);
 
         if (paymentMethod != null) {
-            JOptionPane.showMessageDialog(frame, "Payment Method: " + paymentMethod + "\nTotal: Rp" + formatPrice(finalTotal) + "\n(Including 12% Tax: Rp" + formatPrice(tax) + ")");
+            double tax = totalPrice * 0.12;
+            double finalTotal = totalPrice + tax;
+
+            // Build order details (like a receipt)
+            StringBuilder orderDetails = new StringBuilder();
+            for (int i = 0; i < orderListModel.size(); i++) {
+                orderDetails.append(orderListModel.getElementAt(i)).append("\n");
+            }
+
+            // Show payment dialog with detailed receipt
+            JOptionPane.showMessageDialog(frame,
+                    "Order Type: " + orderType + "\n" +
+                            "Payment Method: " + paymentMethod + "\n\n" +
+                            "Order Details:\n" + orderDetails.toString() + "\n" +
+                            "Subtotal: Rp" + formatPrice(totalPrice) + "\n" +
+                            "Tax (12%): Rp" + formatPrice(tax) + "\n" +
+                            "Total: Rp" + formatPrice(finalTotal));
+
             orderListModel.clear();
             totalPrice = 0.0;
             totalLabel.setText("Total: Rp0");
